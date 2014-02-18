@@ -19,7 +19,7 @@ repipe(s,function(err,last,done){
   if(err && err.message != "unexpected disconnection") return done(err);
   // its the first stream or the stream was cut off before it emitted the end event
   // start the new read stream from where it left off..
-  done(false,multilevel.createReadStream({start:last});
+  done(false,multilevel.createReadStream({start:last.key+"\x00"});
 });
 
 s.on('data',function(data){
