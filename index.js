@@ -1,11 +1,7 @@
 
-// todo decouple from our mdm implmentation and publish as own module.
-// no need to use disconnect. on error should always call for more work but pass (error first,last) 
-
 module.exports = repipe;
 
 function repipe(s,makeSource){
-  // the last value from the source stream
   function work(err,oldsource){
     oldsource = oldsource||{};
     makeSource(err,oldsource.last,function(err,source){
