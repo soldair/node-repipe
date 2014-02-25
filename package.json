@@ -1,7 +1,7 @@
 {
   "name": "repipe",
   "description": "reconnect/remake streams that are piped to a single output stream",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "url": "git://github.com/soldair/node-repipe.git"
   },

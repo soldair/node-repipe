@@ -66,9 +66,7 @@ function resumeable(last,source,s){
   });
   source.on('end',function(){
     cleanup();
-    console.log('end called!',source.error);
     if(!source.error) {
-      console.log('triggering end')
       s.end();
     }
   })
