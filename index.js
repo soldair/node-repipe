@@ -61,12 +61,12 @@ function resumeable(last,source,s){
   s.on('end',onEnd);
 
   source.on('error',function(){
-    source.error = true;
+    source._errored = true;
     cleanup();
   });
   source.on('end',function(){
     cleanup();
-    if(!source.error) {
+    if(!source._errored) {
       s.end();
     }
   })
